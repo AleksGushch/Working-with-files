@@ -35,14 +35,25 @@ namespace WorkingWithFiles
             using (StreamReader sr = new StreamReader("Сотрудники.txt", Encoding.Unicode)) 
             {
                 string infoAboutEmployee;
+                Console.WriteLine($"" +
+                    $"{"Таб.номер",10}|" +
+                    $"{"Возраст",8}|" +
+                    $"{"Рост",5}|" +
+                    $"{"Дата рождения",18}|" +
+                    $"{"Место рождения",20}|" +
+                    $"{"Дата внесения в систему",24}|" +
+                    $"{"Время внесения в систему",25}|");
                 while ((infoAboutEmployee = sr.ReadLine()) != null) 
                 {
                     string[] dataAboutEmployee = infoAboutEmployee.Split(Convert.ToChar("#"));
-                    foreach (string word in dataAboutEmployee) 
-                    {
-                        Console.Write(" "+ word);
-                        Console.WriteLine();
-                    }
+                    Console.WriteLine($"" +
+                        $"{dataAboutEmployee[0],10}|" +
+                        $"{dataAboutEmployee[1],8}|" +
+                        $"{dataAboutEmployee[2],5}|" +
+                        $"{dataAboutEmployee[3],18}|" +
+                        $"{dataAboutEmployee[4],20}|" +
+                        $"{dataAboutEmployee[5],24}|" +
+                        $"{dataAboutEmployee[6],25}|");
                 }
             }
         }
